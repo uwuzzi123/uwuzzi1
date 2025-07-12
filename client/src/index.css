@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 5%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 10%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 10%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(171, 100%, 41%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(171, 100%, 41%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(171, 100%, 41%);
+  --radius: 0.5rem;
+  
+  /* Custom anime theme colors */
+  --anime-dark: hsl(240, 10%, 5%);
+  --anime-secondary: hsl(240, 8%, 10%);
+  --anime-surface: hsl(240, 6%, 15%);
+  --anime-surface-light: hsl(240, 5%, 20%);
+  --anime-accent: hsl(171, 100%, 41%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 5%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 10%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 10%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(171, 100%, 41%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(171, 100%, 41%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(171, 100%, 41%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-color: var(--anime-dark);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .anime-card {
+    @apply bg-card hover:bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer;
+    background-color: var(--anime-secondary);
+  }
+  
+  .anime-card:hover {
+    opacity: 0.8;
+  }
+  
+  .anime-surface {
+    background-color: var(--anime-surface);
+  }
+  
+  .anime-surface-light {
+    background-color: var(--anime-surface-light);
+  }
+  
+  .anime-accent {
+    background-color: var(--anime-accent);
+  }
+  
+  .text-anime-accent {
+    color: var(--anime-accent);
+  }
+}

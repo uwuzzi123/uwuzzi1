@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
+  "functions": {
+    "api/anime-api.js": {
+      "maxDuration": 30
+    },
+    "api/proxy-image.js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/anime-api/(.*)",
+      "destination": "/api/anime-api"
+    },
+    {
+      "source": "/api/proxy-image",
+      "destination": "/api/proxy-image"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
